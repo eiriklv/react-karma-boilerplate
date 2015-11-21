@@ -35,15 +35,18 @@ describe('CheckboxWithLabel', () => {
       'label'
     );
 
-    assert.equal(ReactDOM.findDOMNode(label).textContent, 'Off');
-
-    // Simulate a click and verify that it is now On
-    const input = TestUtils.findRenderedDOMComponentWithTag(
-      checkbox,
-      'input'
+    assert.equal(
+      ReactDOM.findDOMNode(label).textContent,
+      'Off'
     );
 
+    // Simulate a click and verify that it is now On
+    const input = TestUtils.findRenderedDOMComponentWithTag(checkbox, 'input');
     TestUtils.Simulate.change(input);
-    assert.equal(ReactDOM.findDOMNode(label).textContent, 'On');
+
+    assert.equal(
+      ReactDOM.findDOMNode(label).textContent,
+      'On'
+    );
   });
 });

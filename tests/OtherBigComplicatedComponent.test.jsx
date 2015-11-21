@@ -5,13 +5,16 @@ const assert = require('assert');
 
 describe('OtherBigComplicatedComponent', () => {
   it('outputs what it should', () => {
-    const BigComplicatedComponent = require('../src/components/BigComplicatedComponent.jsx');
+    const OtherBigComplicatedComponent = require('../src/components/OtherBigComplicatedComponent.jsx');
 
     // Render a checkbox with label in the document
     const component = TestUtils.renderIntoDocument(
-      <BigComplicatedComponent />
+      <OtherBigComplicatedComponent />
     );
 
-    assert.equal(ReactDOM.findDOMNode(component).textContent, '42');
+    assert.equal(
+      ReactDOM.findDOMNode(component).textContent,
+      '13'
+    );
   });
 });

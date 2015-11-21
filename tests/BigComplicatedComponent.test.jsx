@@ -12,6 +12,9 @@ describe('BigComplicatedComponent', () => {
       <BigComplicatedComponent />
     );
 
-    assert.equal(ReactDOM.findDOMNode(component).textContent, '42');
+    assert.equal(
+      ReactDOM.findDOMNode(component).textContent,
+      '42',
+    );
   });
 });
