@@ -1,5 +1,6 @@
 const React = require('react');
 const BigComplicatedComponent = require('./BigComplicatedComponent.jsx');
+const OtherBigComplicatedComponent = require('./OtherBigComplicatedComponent.jsx');
 
 const CheckboxWithLabel = React.createClass({
   getInitialState() {
@@ -24,6 +25,7 @@ const CheckboxWithLabel = React.createClass({
         />
         {this.state.isChecked ? this.props.labelOn : this.props.labelOff}
         <BigComplicatedComponent />
+        <OtherBigComplicatedComponent />
       </label>
     );
   }

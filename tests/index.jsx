@@ -18,3 +18,4 @@ global.reactStub = React.createClass({
 // Run tests
 require('./CheckboxWithLabel.test.jsx');
 require('./BigComplicatedComponent.test.jsx');
+require('./OtherBigComplicatedComponent.test.jsx');

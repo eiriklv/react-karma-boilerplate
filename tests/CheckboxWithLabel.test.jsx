@@ -11,13 +11,14 @@ describe('CheckboxWithLabel', () => {
      *
      * check out [inject-loader](https://www.npmjs.com/package/inject-loader) for more info
      */
-    const Injector = require('inject?./BigComplicatedComponent.jsx!../src/components/CheckboxWithLabel.jsx');
+    const Injector = require(`inject!../src/components/CheckboxWithLabel.jsx`);
 
     /**
      * Here we're creating the actual mocked component class
      */
     const CheckboxWithLabel = Injector({
       './BigComplicatedComponent.jsx': reactStub,
+      './OtherBigComplicatedComponent.jsx': reactStub,
     });
 
     // Render a checkbox with label in the document
