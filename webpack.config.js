@@ -25,7 +25,7 @@ module.exports = {
       loader: 'expose?React'
     }, {
       test: /\.jsx?$/,
-      loaders:  ['babel',],
+      loaders:  ['babel'],
       include: [jsSrc, testsDir]
     }, {
       test: /\.css$/,

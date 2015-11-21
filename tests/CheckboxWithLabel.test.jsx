@@ -1,26 +1,27 @@
-var React = require('react/addons');
-var TestUtils = React.addons.TestUtils;
-var assert = require('assert');
+const React = require('react');
+const ReactDOM = require('react-dom');
+const TestUtils = require('react-addons-test-utils');
+const assert = require('assert');
 
-describe('CheckboxWithLabel', function() {
-  it('changes the text after click', function() {
+describe('CheckboxWithLabel', () => {
+  it('changes the text after click', () => {
     /**
      * Here we're creating an injector that can mock specific parts
      * of the CheckboxWithLabel components
      *
      * check out [inject-loader](https://www.npmjs.com/package/inject-loader) for more info
      */
-    var Injector = require('inject?./BigComplicatedComponent.jsx!../src/components/CheckboxWithLabel.jsx');
+    const Injector = require('inject?./BigComplicatedComponent.jsx!../src/components/CheckboxWithLabel.jsx');
 
     /**
      * Here we're creating the actual mocked component class
      */
-    var CheckboxWithLabel = Injector({
+    const CheckboxWithLabel = Injector({
       './BigComplicatedComponent.jsx': reactStub,
     });
 
     // Render a checkbox with label in the document
-    var checkbox = TestUtils.renderIntoDocument(
+    const checkbox = TestUtils.renderIntoDocument(
       <CheckboxWithLabel
         labelOn="On"
         labelOff="Off"
@@ -28,20 +29,20 @@ describe('CheckboxWithLabel', function() {
     );
 
     // Verify that it's Off by default
-    var label = TestUtils.findRenderedDOMComponentWithTag(
+    const label = TestUtils.findRenderedDOMComponentWithTag(
       checkbox,
       'label'
     );
 
-    assert.equal(React.findDOMNode(label).textContent, 'Off');
+    assert.equal(ReactDOM.findDOMNode(label).textContent, 'Off');
 
     // Simulate a click and verify that it is now On
-    var input = TestUtils.findRenderedDOMComponentWithTag(
+    const input = TestUtils.findRenderedDOMComponentWithTag(
       checkbox,
       'input'
     );
 
     TestUtils.Simulate.change(input);
-    assert.equal(React.findDOMNode(label).textContent, 'On');
+    assert.equal(ReactDOM.findDOMNode(label).textContent, 'On');
   });
 });

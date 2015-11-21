@@ -1,7 +1,7 @@
-var React = require('react');
+const React = require('react');
 
 // Make console.warn throw
-var warn = console.warn;
+let warn = console.warn;
 console.warn = function (warning) {
   throw new Error(warning);
   warn.apply(console, arguments);

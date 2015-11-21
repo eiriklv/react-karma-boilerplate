@@ -1,9 +1,9 @@
 require('../styles/app.css');
 
-var React = require('react');
-var CheckboxWithLabel = require('./CheckboxWithLabel.jsx');
+const React = require('react');
+const CheckboxWithLabel = require('./CheckboxWithLabel.jsx');
 
-var App = React.createClass({
+const App = React.createClass({
   render() {
     return (
       <div>
