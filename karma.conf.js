@@ -13,12 +13,12 @@ module.exports = function (config) {
 
     // Just load this file
     files: [
-      'tests/index.jsx'
+      'tests/_index.js'
     ],
 
     // Preprocess with webpack and our sourcemap loader
     preprocessors: {
-      'tests/index.jsx': ['webpack', 'sourcemap']
+      'tests/_index.js': ['webpack', 'sourcemap']
     },
 
     // Report results in this format

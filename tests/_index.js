@@ -7,6 +7,13 @@ console.warn = function (warning) {
   warn.apply(console, arguments);
 };
 
+// Make console.error throw
+let err = console.error;
+console.error = function (warning) {
+  throw new Error(warning);
+  err.apply(console, arguments);
+};
+
 // react component stub (global for easy access)
 global.reactStub = React.createClass({
   displayName: 'StubClass',
@@ -15,7 +22,10 @@ global.reactStub = React.createClass({
   }
 });
 
-// Run tests
-require('./CheckboxWithLabel.test.jsx');
-require('./BigComplicatedComponent.test.jsx');
-require('./OtherBigComplicatedComponent.test.jsx');
+/**
+ * Automatically include
+ * all test files '.test.js(x)'
+ */
+const context = require.context('.', true, /.+\.test\.jsx?$/);
+context.keys().forEach(context);
+module.exports = context;

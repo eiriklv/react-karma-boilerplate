@@ -1,7 +1,10 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 const TestUtils = require('react-addons-test-utils');
-const assert = require('assert');
+const expect = require('expect');
+const expectJSX = require('expect-jsx');
+
+expect.extend(expectJSX);
 
 describe('CheckboxWithLabel', () => {
   it('changes the text after click', () => {
@@ -35,18 +38,12 @@ describe('CheckboxWithLabel', () => {
       'label'
     );
 
-    assert.equal(
-      ReactDOM.findDOMNode(label).textContent,
-      'Off'
-    );
+    expect(ReactDOM.findDOMNode(label).textContent).toEqual('Off');
 
     // Simulate a click and verify that it is now On
     const input = TestUtils.findRenderedDOMComponentWithTag(checkbox, 'input');
     TestUtils.Simulate.change(input);
 
-    assert.equal(
-      ReactDOM.findDOMNode(label).textContent,
-      'On'
-    );
+    expect(ReactDOM.findDOMNode(label).textContent).toEqual('On')
   });
 });
