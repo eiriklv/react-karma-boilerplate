@@ -1,7 +1,17 @@
+/**
+ * Dependencies
+ */
 const React = require('react');
+
+/**
+ * Import sub-components
+ */
 const BigComplicatedComponent = require('./BigComplicatedComponent.jsx');
 const OtherBigComplicatedComponent = require('./OtherBigComplicatedComponent.jsx');
 
+/**
+ * A component with state/interaction
+ */
 const CheckboxWithLabel = React.createClass({
   getInitialState() {
     return {
