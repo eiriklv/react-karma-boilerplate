@@ -49,7 +49,7 @@ describe('CheckboxWithLabel', () => {
     );
 
     /**
-     * Find the DOM component we want to test (in this case the label)
+     * Find the DOM component we want to test (in this case the <label>)
      */
     const label = TestUtils.findRenderedDOMComponentWithTag(
       checkbox,
