@@ -62,7 +62,7 @@ describe('CheckboxWithLabel', () => {
     expect(ReactDOM.findDOMNode(label).textContent).toEqual('Off');
 
     /**
-     * Find the DOM component we want to test (in this case the checkbox)
+     * Find the DOM component we want to test (in this case the <input>)
      */
     const input = TestUtils.findRenderedDOMComponentWithTag(checkbox, 'input');
 
