@@ -30,7 +30,7 @@ console.error = function (warning) {
 
 /**
  * Automatically include all test files
- * of the pattern '.src/***.test.js(x)'
+ * of the pattern './src/***.test.js(x)'
  * (this is webpack "magic")
  */
 const context = require.context('./src/', true, /.+\.test\.jsx?$/);
