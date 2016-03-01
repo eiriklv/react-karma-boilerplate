@@ -12,6 +12,9 @@ const expectJSX = require('expect-jsx');
  */
 expect.extend(expectJSX);
 
+/**
+ * Mocha test suite
+ */
 describe('BigComplicatedComponent', () => {
   it('outputs what it should (using DOM rendering)', () => {
     const BigComplicatedComponent = require('./BigComplicatedComponent.jsx');
