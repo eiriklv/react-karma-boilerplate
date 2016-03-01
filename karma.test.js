@@ -14,7 +14,7 @@ const React = require('react');
  * Make console.warn throw
  */
 let warn = console.warn;
-console.warn = function (warning) {
+console.warn = function(warning) {
   throw new Error(warning);
   warn.apply(console, arguments);
 };
@@ -23,7 +23,7 @@ console.warn = function (warning) {
  * Make console.error throw
  */
 let err = console.error;
-console.error = function (warning) {
+console.error = function(warning) {
   throw new Error(warning);
   err.apply(console, arguments);
 };

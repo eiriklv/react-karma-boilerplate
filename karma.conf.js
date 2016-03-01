@@ -6,7 +6,7 @@ var webpackConfig = require('./webpack.config.js');
 /**
  * Export configuration for Karma
  */
-module.exports = function (config) {
+module.exports = function(config) {
   config.set({
     /**
      * Run tests in Chrome and Firefox
